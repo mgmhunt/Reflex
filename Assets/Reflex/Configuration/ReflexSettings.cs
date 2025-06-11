@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Reflex.Core;
 using Reflex.Logging;
 using UnityEngine;
@@ -17,7 +18,7 @@ namespace Reflex.Configuration
             {
                 if (_instance == null)
                 {
-                    _instance = Resources.Load<ReflexSettings>("ReflexSettings");
+                    _instance = Resources.LoadAll<ReflexSettings>("ReflexSettings").FirstOrDefault();
                 }
                 
                 Assert.IsNotNull(_instance, "ReflexSettings not found in Resources folder.\n" +
