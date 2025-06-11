@@ -18,7 +18,7 @@ namespace Reflex.Configuration
             {
                 if (_instance == null)
                 {
-                    _instance = Resources.LoadAll<ReflexSettings>("ReflexSettings").FirstOrDefault();
+                    _instance = Resources.LoadAll<ReflexSettings>("").FirstOrDefault();
                 }
                 
                 Assert.IsNotNull(_instance, "ReflexSettings not found in Resources folder.\n" +
